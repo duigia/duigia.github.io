@@ -1,0 +1,135 @@
+/* Custom CSS for Buddy Pet Care Services - Pale Green Theme */
+
+/* 1. Body and Font */
+body {
+    font-family: 'Poppins', sans-serif; /* Using the Google Font linked in HTML */
+    padding-top: 70px; /* Space for fixed-top navbar */
+    color: #333; /* Darker text for readability against pale backgrounds */
+}
+
+/* 2. Primary/Accent Colors (Modern Palette) */
+:root {
+    /* Pale Green Primary (Muted, Modern) */
+    --primary-color: #A8DADC; /* Light Cyan/Mint - Very Pale Green */
+    /* Dark Green Contrast (Used for buttons/icons where color is needed) */
+    --primary-dark-color: rgb(15, 126, 5); /* Stronger Teal/Blue-Green for better contrast */
+    /* Accent Color (Pop of Energy) */
+    --accent-color: #39e690; /* A sharp, deep Red/Coral for important CTAs */
+    --dark-color: #212529;
+}
+
+/* 3. Bootstrap Class Overrides */
+
+/* Primary Button/Element (Now the Darker Teal/Blue-Green for contrast) */
+.btn-primary {
+    background-color: var(--primary-dark-color);
+    border-color: var(--primary-dark-color);
+}
+
+.btn-primary:hover {
+    background-color: #38627b; /* Slightly darker hover */
+    border-color: #38627b;
+}
+
+/* Warning Button/CTA (Now the sharp Accent Red/Coral) */
+.btn-warning {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white; /* Ensuring text stands out */
+}
+
+.btn-warning:hover {
+    background-color: rgb(15, 126, 5);; 
+    border-color: rgb(15, 126, 5);;
+}
+
+/* Secondary Button (Used for 'View Rates' and 'See Services') */
+.btn-outline-secondary {
+    color: var(--primary-dark-color);
+    border-color: var(--primary-dark-color);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--primary-dark-color);
+    color: white;
+}
+
+/* Icons and Primary Text Coloring */
+.text-primary, .text-custom-primary {
+    color: var(--primary-dark-color) !important;
+}
+
+/* Applying the Pale Green to the Testimonials Section (bg-primary) */
+.bg-primary {
+    background-color: var(--primary-color) !important;
+    color: var(--dark-color); /* Ensure text is dark on light background */
+}
+
+/* Testimonials text adjustments for visibility on light background */
+#testimonials h2, 
+#testimonials .blockquote p, 
+#testimonials .blockquote-footer {
+    color: var(--dark-color) !important;
+}
+
+#testimonials .carousel-control-prev,
+#testimonials .carousel-control-next {
+    /* Reduce the size of the controls slightly */
+    width: 6%; 
+}
+
+#testimonials .carousel-control-prev {
+    /* Push the control slightly inward from the far left */
+    left: -15px; 
+}
+
+#testimonials .carousel-control-next {
+    /* Push the control slightly inward from the far right */
+    right: -15px;
+}
+
+#testimonials .carousel-inner {
+    /* Add internal horizontal padding to move the review text away from the arrows */
+    padding: 0 45px; 
+}
+
+#testimonials .carousel-control-prev-icon, 
+#testimonials .carousel-control-next-icon {
+    filter: invert(100%); /* Makes carousel arrows dark for visibility */
+}
+
+/* 4. Hero Section Styling */
+#hero {
+    /* Keep the gradient dark on the image for the white text to pop */
+    /* Ensure you place your image named 'placeholder-hero-dog.jpg' in the same directory as your CSS, or update the path */
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("../img/header_background.webp") no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh; 
+}
+
+#hero .display-2 {
+    font-size: 4.5rem; /* Larger on desktop */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for text pop */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    #hero .display-2 {
+        font-size: 3rem;
+    }
+}
+
+/* 5. Section Padding */
+section {
+    padding: 6rem 0;
+}
+
+/* 6. Adventure/Blog Page Styling */
+.object-fit-cover {
+    object-fit: cover;
+}
+.card img, .card iframe {
+    /* Ensures image/video fills container nicely on blog cards */
+    height: 350px; 
+}
