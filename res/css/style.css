@@ -91,6 +91,7 @@ body {
 #testimonials .carousel-inner {
     /* Add internal horizontal padding to move the review text away from the arrows */
     padding: 0 45px; 
+    height: 300px;
 }
 
 #testimonials .carousel-control-prev-icon, 
@@ -99,9 +100,7 @@ body {
 }
 
 #testimonials .carousel-item {
-    height: 220px;
     overflow: hidden;
-    width: 100%;
 }
 
 /* 4. Hero Section Styling */
