@@ -108,10 +108,17 @@ body {
 #hero {
     /* Keep the gradient dark on the image for the white text to pop */
     /* Ensure you place your image named 'placeholder-hero-dog.jpg' in the same directory as your CSS, or update the path */
-    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("../img/header_background.webp") no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("../img/halo_background.webp") no-repeat center center;
     background-size: cover;
     background-position: center;
     min-height: 80vh; 
+}
+
+/* For width 768px and smaller: */
+@media (max-width: 768px) {
+    #hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("../img/halo_background_mobile.webp") no-repeat center center;
+    }
 }
 
 #hero .display-2 {
