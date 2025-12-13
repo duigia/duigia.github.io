@@ -10,7 +10,7 @@ body {
 /* 2. Primary/Accent Colors (Modern Palette) */
 :root {
     /* Pale Green Primary (Muted, Modern) */
-    --primary-color: #A8DADC; /* Light Cyan/Mint - Very Pale Green */
+    --primary-color: #a8dcb1; /* Light Cyan/Mint - Very Pale Green */
     /* Dark Green Contrast (Used for buttons/icons where color is needed) */
     --primary-dark-color: rgb(15, 126, 5); /* Stronger Teal/Blue-Green for better contrast */
     /* Accent Color (Pop of Energy) */
@@ -98,6 +98,12 @@ body {
     filter: invert(100%); /* Makes carousel arrows dark for visibility */
 }
 
+#testimonials .carousel-item {
+    height: 220px;
+    overflow: hidden;
+    width: 100%;
+}
+
 /* 4. Hero Section Styling */
 #hero {
     /* Keep the gradient dark on the image for the white text to pop */
@@ -129,7 +135,39 @@ section {
 .object-fit-cover {
     object-fit: cover;
 }
+
 .card img, .card iframe {
     /* Ensures image/video fills container nicely on blog cards */
-    height: 350px; 
+    width: 100%;
+    height: auto;
+}
+
+.blog-video {
+    width: 100%;
+    aspect-ratio: 4 / 5;   /* modern replacement for Bootstrap ratio */
+    overflow: hidden;
+    border-radius: 0.5rem; /* optional – matches card look */
+}
+
+.blog-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.wide-video {
+    width: 100%;
+    aspect-ratio: 16 / 9;   /* landscape */
+    overflow: hidden;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.wide-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  /* IMPORTANT for landscape */
+    background: #000;     /* avoids white bars */
+    display: block;
 }
