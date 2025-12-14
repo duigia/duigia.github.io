@@ -65,11 +65,19 @@ body {
     color: var(--dark-color); /* Ensure text is dark on light background */
 }
 
+.honey {
+    display: none;
+}
+
 /* Testimonials text adjustments for visibility on light background */
 #testimonials h2, 
 #testimonials .blockquote p, 
 #testimonials .blockquote-footer {
     color: var(--dark-color) !important;
+}
+
+#testimonials .carousel {
+    max-width: 800px;
 }
 
 #testimonials .carousel-control-prev,
@@ -118,6 +126,11 @@ body {
     #hero {
         background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("../img/halo_background_mobile.webp") no-repeat center center;
     }
+}
+
+/* Hero image adjustments*/
+#hero img {
+    max-height: 150px;
 }
 
 #hero .display-2 {

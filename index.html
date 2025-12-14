@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="res/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
@@ -43,8 +44,7 @@
                     <img 
                         src="res/img/buddy_pet_care_logo_white.webp" 
                         alt="Buddy Pet Care Services Logo" 
-                        class="mb-4 img-fluid" 
-                        style="max-height: 150px;"
+                        class="mb-4 img-fluid"
                     >
                     <h1 class="display-2 fw-bolder mb-3">It's not where you walk, it's who you walk with </h1>
                     <p class="lead mb-5">Reliable, insured, and dedicated one-to-one dog walks and pet drop-in visits in Kendal and South Lakes</p>
@@ -63,7 +63,7 @@
                 <div class="col-md-5 col-lg-4">
                     <div class="card h-100 shadow-lg border-0 text-center p-4">
                         <i class="fas fa-dog fa-3x text-primary mb-3"></i>
-                        <h4 class="card-title fw-bold">One-to-One Do Walks</h4>
+                        <h4 class="card-title fw-bold">One-to-One Dog Walks</h4>
                         <p class="card-text">Dedicated, solo attention tailored to your dog's pace and personality. No group distractions, just quality time.</p>
                         <ul class="list-unstyled text-start small">
                             <li><i class="fas fa-check-circle text-primary me-2"></i>30, 45, or 60 minute options</li>
@@ -88,7 +88,7 @@
 
                 <div class="col-md-5 col-lg-4">
                     <div class="card h-100 shadow-lg border-0 text-center p-4">
-                        <i class="fas fa-home fa-3x text-primary mb-3"></i>
+                        <i class="fas fa-mobile-screen fa-3x text-primary mb-3"></i>
                         <h4 class="card-title fw-bold">App Based Booking</h4>
                         <p class="card-text">Prefer to book using the web or an app. No problem! Visit our dedicated Rover page and request a service now.</p>
                         <ul class="list-unstyled text-start small">
@@ -146,7 +146,7 @@
     <div class="container text-center">
         <h2 class="mb-4 fw-bold">Happy Paws, Happy Owners</h2>
         
-        <div id="reviewCarousel" class="carousel slide mx-auto" style="max-width: 800px;" data-bs-ride="carousel">
+        <div id="reviewCarousel" class="carousel slide mx-auto" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <blockquote class="blockquote">
@@ -213,7 +213,8 @@
                 <p class="text-center mb-4">Alternatively, email us at <a href="mailto:buddypetcareservices@outlook.com">buddypetcareservices@outlook.com</a></p>
 
                 <form action="https://formsubmit.co/buddypetcareservices@outlook.com" method="POST">
-                    <input type="hidden" name="_honey" style="display:none"> <input type="hidden" name="_next" value="/res/pages/thank_you.html">
+                    <input class="honey" type="hidden" name="_honey"> 
+                    <input type="hidden" name="_next" value="/res/pages/thank_you.html">
 
                     <div class="mb-3">
                         <input type="text" class="form-control" name="Name" placeholder="Your Name" required>
@@ -253,10 +254,10 @@
     <footer class="bg-dark text-white py-4">
         <div class="container text-center">
             <p class="mb-2">&copy; <span id="currentYear"></span> Buddy Pet Care Services. All rights reserved.</p>
-            <p><small><a href="#" class="text-white">Privacy Policy</a> | <a href="#" class="text-white">Service Area</a></small></p>
-            <div>
-                <a href="https://www.facebook.com/buddydogwalkingandpetcare/" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
-            </div>
+            <p><small><a href="pages/privacy_policy.html" class="text-white">Privacy Policy</a> | 
+                <a href="https://www.facebook.com/buddydogwalkingandpetcare/" class="text-white">Facebook</a>
+                <a title="Our Facebook Page" href="https://www.facebook.com/buddydogwalkingandpetcare/" class="text-white mx-2">
+                <i class="fab fa-facebook-f"></i></a></small></p>
         </div>
     </footer>
 
