@@ -99,7 +99,10 @@ body {
 #testimonials .carousel-inner {
     /* Add internal horizontal padding to move the review text away from the arrows */
     padding: 0 45px; 
-    height: 300px;
+    height: auto;
+    min-height: 300px; /* Redundant now, but kept for clarity */
+    display: flex; /* Helps center content if it's shorter than the container */
+    align-items: center; /* Vertically center the review text */
 }
 
 #testimonials .carousel-control-prev-icon, 
@@ -109,6 +112,7 @@ body {
 
 #testimonials .carousel-item {
     overflow: hidden;
+    height: 100%;
 }
 
 /* 4. Hero Section Styling */
