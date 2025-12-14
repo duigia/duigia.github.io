@@ -175,18 +175,22 @@ section {
     display: block;
 }
 
+/* 1. Use a standard responsive wrapper (similar to Bootstrap's ratio) */
 .wide-video {
-    width: 100%;
-    aspect-ratio: 16 / 9;   /* landscape */
-    overflow: hidden;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
+    position: relative; /* Base for absolute positioning */
+    width: 100%;       /* Takes full width of its container */
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (9 / 16 = 0.5625) */
+    height: 0;         /* Hide the div's height for the padding trick to work */
+    overflow: hidden;  /* Prevents any scrollbars */
+    margin-bottom: 20px; /* Optional: adds space below the video */
+    border-radius: 0.5rem;
 }
 
-.wide-video video {
+/* 2. Make the iframe fill the responsive wrapper */
+.wide-video iframe {
+    position: absolute; /* Position the iframe absolutely within the wrapper */
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain;  /* IMPORTANT for landscape */
-    background: #000;     /* avoids white bars */
-    display: block;
 }
