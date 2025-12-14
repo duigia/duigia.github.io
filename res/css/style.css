@@ -183,7 +183,7 @@ section {
     border-top-right-radius: 0.5rem;
 }
 
-.wide-video iframe {
+.wide-video video {
     width: 100%;
     height: 100%;
     object-fit: contain;  /* IMPORTANT for landscape */
