@@ -210,6 +210,9 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             const video = entry.target;
             if (entry.isIntersecting) {
+                // Reset retry count when video enters viewport
+                video.dataset.retryCount = '0';
+                
                 // Load and play the video
                 const source = video.querySelector('source');
                 if (source && source.dataset.src && !source.src) {
@@ -238,8 +241,8 @@ document.addEventListener('DOMContentLoaded', function() {
         video.dataset.retryCount = '0';
         const maxRetries = 3;
         
-        // Add error handling for retry logic
-        video.addEventListener('error', function() {
+        // Function to handle retry logic
+        const retryVideoLoad = function() {
             const currentRetries = parseInt(video.dataset.retryCount) || 0;
             if (currentRetries < maxRetries) {
                 video.dataset.retryCount = (currentRetries + 1).toString();
@@ -249,9 +252,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(() => {
                     const source = video.querySelector('source');
                     if (source && source.dataset.src) {
-                        // Clear any existing error state
-                        video.error = null;
-                        // Reload the video
+                        // Reset the source to trigger reload
+                        source.src = source.dataset.src;
                         video.load();
                         // Try to play if it's in viewport
                         if (video.paused) {
@@ -264,7 +266,16 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 console.log('Video failed to load after maximum retries');
             }
-        });
+        };
+        
+        // Add error handling for video element
+        video.addEventListener('error', retryVideoLoad);
+        
+        // Add error handling for source element
+        const source = video.querySelector('source');
+        if (source) {
+            source.addEventListener('error', retryVideoLoad);
+        }
         
         observer.observe(video);
     });
