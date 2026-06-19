@@ -39,6 +39,29 @@
         </div>
     </nav>
 
+    <!-- App Promotion Banner -->
+    <div class="app-banner" id="appBanner">
+        <div class="container-fluid">
+            <div class="app-banner-content d-flex align-items-center justify-content-between">
+                <div class="app-info d-flex align-items-center gap-3">
+                    <div class="app-icon">
+                        <img src="res/img/buddypetplanner_icon.webp" alt="Buddy Pet Planner Icon" class="app-icon-img">
+                    </div>
+                    <div class="app-text">
+                        <h5 class="mb-0 fw-bold">Buddy Pet Planner</h5>
+                        <p class="mb-0 small">Are you a dog walker or pet sitter? Manage your business with our app!</p>
+                    </div>
+                </div>
+                <div class="app-actions d-flex gap-2 align-items-center">
+                    <a href="https://play.google.com/store/apps/details?id=com.handroid.petplannerpro" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-light fw-bold">
+                        <i class="fab fa-google-play me-1"></i>Get on Play Store
+                    </a>
+                    <button class="btn-close btn-close-white" type="button" aria-label="Close" onclick="hideAppBanner();"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header id="hero" class="vh-100 d-flex align-items-center text-white text-center">
         <div class="container">
             <div class="row justify-content-center">
@@ -263,10 +286,38 @@
     </footer>
 
     <script>
+        function adjustHeaderLayout() {
+            var banner = document.getElementById('appBanner');
+            var nav = document.querySelector('.navbar.fixed-top');
+            var bannerHeight = 0;
+            var navHeight = nav ? nav.offsetHeight : 0;
+
+            if (banner && banner.offsetHeight && window.getComputedStyle(banner).display !== 'none') {
+                bannerHeight = banner.offsetHeight;
+            }
+
+            if (banner) {
+                banner.style.top = navHeight + 'px';
+            }
+
+            document.body.style.paddingTop = (navHeight + bannerHeight) + 'px';
+        }
+
+        function hideAppBanner() {
+            var banner = document.getElementById('appBanner');
+            if (banner) {
+                banner.style.display = 'none';
+            }
+            adjustHeaderLayout();
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
-        var currentYear = new Date().getFullYear();
-        document.getElementById('currentYear').textContent = currentYear;
+            var currentYear = new Date().getFullYear();
+            document.getElementById('currentYear').textContent = currentYear;
+            adjustHeaderLayout();
         });
+
+        window.addEventListener('resize', adjustHeaderLayout);
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

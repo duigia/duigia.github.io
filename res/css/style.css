@@ -7,6 +7,128 @@ body {
     color: #333; /* Darker text for readability against pale backgrounds */
 }
 
+/* App Promotion Banner */
+.app-banner {
+    background: linear-gradient(135deg, rgb(15, 126, 5) 0%, #13B48B 100%);
+    color: white;
+    padding: 8px 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1045;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.app-banner .app-text h5 {
+    font-size: 0.95rem;
+}
+
+.app-banner .app-text p {
+    font-size: 0.8rem;
+}
+
+.app-banner .btn-light {
+    padding: 0.4rem 1rem;
+}
+
+.navbar.fixed-top {
+    transition: top 0.25s ease;
+}
+
+.app-banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.app-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+    min-width: 250px;
+}
+
+.app-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(19, 180, 139, 1);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.app-icon-img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.app-text h5 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.app-text p {
+    font-size: 0.85rem;
+    opacity: 0.95;
+}
+
+.app-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.app-banner .btn-light {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: rgb(15, 126, 5) !important;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.app-banner .btn-light:hover {
+    background-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.app-banner .btn-close-white {
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+}
+
+.app-banner .btn-close-white:hover {
+    opacity: 1;
+}
+
+/* Responsive adjustments for app banner */
+@media (max-width: 768px) {
+    .app-banner-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .app-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .app-actions .btn {
+        flex: 1;
+        text-align: center;
+    }
+}
+
 /* 2. Primary/Accent Colors (Modern Palette) */
 :root {
     /* Pale Green Primary (Muted, Modern) */
