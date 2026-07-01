@@ -292,7 +292,8 @@ section {
     width: 100%;
     aspect-ratio: 4 / 5;   /* modern replacement for Bootstrap ratio */
     overflow: hidden;
-    border-radius: 0.5rem; /* optional – matches card look */
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
 }
 
 .blog-video video {
@@ -322,7 +323,8 @@ section {
     width: 100%;
     aspect-ratio: 1 / 1;   /* Perfect 1:1 square */
     overflow: hidden;
-    border-radius: 0.5rem; /* Optional: matches your card look */
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
 }
 
 .square-video video {
